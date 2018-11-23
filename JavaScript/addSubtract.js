@@ -1,3 +1,4 @@
+//Javascript Function to push numbers and then add and subtract them
 function addSubtract(x){
   var numbers = [];
   var inner = function(y) {
