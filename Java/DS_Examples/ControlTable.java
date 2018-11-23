@@ -1,16 +1,19 @@
+package org.clongs.java8;
+//Source: Not my own; Copied from the web for practice
+
 import java.util.HashMap;
 import java.util.Map;
- 
+
 public class ControlTable
 {
     private Map<String,Integer> controlTable;
- 
+
     public ControlTable()
     {
-        controlTable = new HashMap<String,Integer>(); 
+        controlTable = new HashMap<String,Integer>();
         populateTable();
     }
- 
+
     public int[] controlTable(int[] asciiCodes)
     {
         int[] index = new int[asciiCodes.length];
@@ -20,7 +23,7 @@ public class ControlTable
         }
         return index;
     }
- 
+
     private void populateTable()
     {
         controlTable.put(Integer.toHexString(65), 01);
@@ -28,7 +31,7 @@ public class ControlTable
         controlTable.put(Integer.toHexString(77), 03);
         controlTable.put(Integer.toHexString(83), 02);
     }
- 
+
     public static void main (String...arg)
     {
         int[] asciiCodes = new int[4];
@@ -37,18 +40,18 @@ public class ControlTable
         asciiCodes [1] = (int) 'D';
         asciiCodes [2] = (int) 'M';
         asciiCodes [3] = (int) 'S';
- 
+
         ControlTable controlTable = new ControlTable();
         tableOutput = controlTable.controlTable(asciiCodes);
- 
+
         System.out.println("Input values ");
         System.out.print("( ");
         for (int i = 0; i < asciiCodes.length; i++)
         {
-            System.out.print((char)asciiCodes[i] + " ");	
+            System.out.print((char)asciiCodes[i] + " ");
         }
         System.out.print(")\n");
- 
+
         System.out.println("New Index from Control table");
         System.out.print("( ");
         for (int i = 0; i < tableOutput.length; i++)
@@ -56,5 +59,5 @@ public class ControlTable
             System.out.print(tableOutput[i] + " ");
         }
         System.out.print(")");
-    } 	
+    }
 }
