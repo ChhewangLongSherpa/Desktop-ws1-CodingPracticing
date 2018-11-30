@@ -1,3 +1,4 @@
+//Source: O'reilly C++ cookbooks
 #include <iostream>
 #include <limits>
 
