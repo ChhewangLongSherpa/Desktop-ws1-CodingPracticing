@@ -1,4 +1,5 @@
 /** A class that displays a bitmap and lets drawing be done. */
+//https://courses.cs.washington.edu/courses/cse142/01au/dist/Draw.java
 
 import uwcse.graphics.*;
 import java.awt.Color;
@@ -10,7 +11,7 @@ public class Draw {
   private Color penColor; // the current color to paint
 
   private Random random; // a random number generator
-  
+
   public Draw(GWindow w) {
       // create a bitmap to fill the window
       int pixelSize = 10; // the size in real pixels of each cell of the bitmap
@@ -64,12 +65,12 @@ public class Draw {
 
   /** respond to a new pen color key press event */
   public void newPenColor() {
-    Color randomColor = new Color(this.random.nextInt(256), 
+    Color randomColor = new Color(this.random.nextInt(256),
 				  this.random.nextInt(256),
 				  this.random.nextInt(256));
     this.penColor = randomColor;
   }
-    
+
   /** A test method */
   public static void test() {
     GWindow w = new GWindow(650,500);

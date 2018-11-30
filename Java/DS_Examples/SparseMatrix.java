@@ -1,13 +1,13 @@
 /******************************************************************************
  *  Compilation:  javac SparseMatrix.java
  *  Execution:    java SparseMatrix
- *  
+ *
  *  A sparse, square matrix, implementing using two arrays of sparse
  *  vectors, one representation for the rows and one for the columns.
  *
  *  For matrix-matrix product, we might also want to store the
  *  column representation.
- * https://introcs.cs.princeton.edu/java/44st/SparseMatrix.java.html
+ * Source: https://introcs.cs.princeton.edu/java/44st/SparseMatrix.java.html
  ******************************************************************************/
 
 public class SparseMatrix {
@@ -37,7 +37,7 @@ public class SparseMatrix {
     }
 
     // return the number of nonzero entries (not the most efficient implementation)
-    public int nnz() { 
+    public int nnz() {
         int sum = 0;
         for (int i = 0; i < n; i++)
             sum += rows[i].nnz();
@@ -95,5 +95,5 @@ public class SparseMatrix {
 }
 
 
-//Copyright © 2000–2017, Robert Sedgewick and Kevin Wayne. 
+//Copyright © 2000–2017, Robert Sedgewick and Kevin Wayne.
 //Last updated: Fri Oct 20 14:12:12 EDT 2017.
