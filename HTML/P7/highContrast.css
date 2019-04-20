@@ -1,0 +1,108 @@
+/* High Contrast css
+** Source: https://css-tricks.com/css-variables-calc-rgb-enforcing-high-contrast-colors/
+** Date: 03/04/2019
+*/
+:root {
+  --red: 28;
+  --green: 150;
+  --blue: 130;
+
+  --accessible-color: calc(
+    (
+      (
+        (var(--red) * 299 ) +
+        (var(--green) * 587 ) +
+        (var(--blue) * 114 ) /
+        1000
+      ) - 128000
+    ) * -1000
+  );
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: monserrat, sans-serif;
+}
+
+.button {
+  appearance: none;
+  padding: 0.5em 1em;
+  margin: auto;
+  color:
+    rgb(
+      var(--accessible-color),
+      var(--accessible-color),
+      var(--accessible-color)
+    );
+  font-size: 1.5em;
+  line-height: 1;
+  font-family: inherit;
+  background-color:
+    rgb(
+      var(--red),
+      var(--green),
+      var(--blue)
+    );
+  border: 0;
+  border-radius: 1.5em;
+}
+
+/* Controls */
+
+.controls {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+  color: #333;
+  text-transform: uppercase;
+  background-color: rgba(220, 220, 220, 0.5);
+}
+
+.controls .title {
+  flex: 2 0 100%;
+  margin: 0.5rem;
+  font-weight: 900;
+  font-size: 1.25em;
+  text-align: center;
+  letter-spacing: 0.03125em;
+}
+
+.controls fieldset {
+  width: calc(33.33% - 1rem);
+  border: none;
+  margin: 0.5rem;
+}
+
+.controls label {
+  display: block;
+  font-size: x-small;
+  letter-spacing: 0.0625em;
+}
+
+.controls input[type="range"] {
+  position: relative;
+  widows: 100%;
+}
+
+.controls input[type="range"]::before {
+  content: attr(data-value);
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+}

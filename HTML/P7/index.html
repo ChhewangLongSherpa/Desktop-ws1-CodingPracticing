@@ -1,0 +1,44 @@
+<!--
+High Enforcement Color
+Source: https://css-tricks.com/css-variables-calc-rgb-enforcing-high-contrast-colors/
+Date: 03/04/2019
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="highContrast.css">
+    <title>High Contrast Color</title>
+  </head>
+  <body>
+    <button class="button"> CSS A11y Button </button>
+
+    <div class="controls">
+      <h2 class="title">Button Background Color</h2>
+
+      <fieldset>
+        <div class="form-element">
+          <label for="red">Red</label>
+          <input id="red" class="range red" name="red" type="range" min="0" max="255">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <div class="form-element">
+          <label for="green">Green</label>
+          <input id="green" class="range green" name="green" type="range" min="0" max="255">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <div class="form-element">
+          <label for="blue">Blue</label>
+          <input id="blue" class="range blue" name="blue" type="range" min="0" max="255">
+        </div>
+      </fieldset>
+    </div>
+    <script src="highContrast.js"></script>
+  </body>
+</html>

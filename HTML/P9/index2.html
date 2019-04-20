@@ -1,0 +1,32 @@
+<!--
+** CSS Variable Mod via Javascript
+** Source: https://codepen.io/danwilson/pen/oBrOGW
+** Date: 03/04/2019
+  -->
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="p9_2.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="mover"></div>
+  <div class="mover"></div>
+  <div class="mover"></div>
+  <div class="mover"></div>
+
+  <div id="controls">
+    <label for="tx"><span>0 </span>translateX<span>80</span></label>
+    <input type="range" id="tx" min="0" max="80" value="0" />
+    <label for="scale"><span>0</span>scale<span>2</span></label>
+    <input type="range" id="scale" min="0" max="2" step=".05" value="1"/>
+    <label for="deg"><span>-360</span>rotate<span>360</span></label>
+    <input type="range" id="deg" min="-360" max="360" value="0"/>
+  </div>
+</body>
+<script src="p9_2.js" charset="utf-8"></script>
+</html>

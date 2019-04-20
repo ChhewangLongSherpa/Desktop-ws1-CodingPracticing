@@ -1,0 +1,73 @@
+/*
+** Transform on Button - CSS Only
+** Source: https://codepen.io/danwilson/pen/ggVPVQ
+** Date: 03/04/2019
+*/
+button {
+  transition: transform 125ms ease-out;
+}
+.actual, .expected {
+  transform: translateY(-150%);
+}
+
+/* will (perhaps unintentionally) override the original translate */
+.actual:hover {
+  transform: scale(.8);
+}
+/* will (perhaps unintentionally) override the original translate and scale */
+.actual:active {
+  transform: rotate(-5deg);
+}
+
+/* explicitly restates each previous transform function and works as intended */
+.expected:hover {
+  transform: translateY(-150%) scale(.8);
+}
+.expected:active {
+  transform: translateY(-150%) scale(1) rotate(-5deg);
+}
+.expected:hover:active {
+  transform: translateY(-150%) scale(.8) rotate(-5deg);
+}
+
+/* will have similar experience to expected, but organized differently */
+.via-variables {
+  --y: -150%;
+  --scale: 1;
+  --rotation: 0deg;
+
+  transform: translateY(var(--y)) scale(var(--scale)) rotate(var(--rotation));
+}
+.via-variables:hover {
+  --scale: .8;
+}
+.via-variables:active {
+  --rotation: -5deg;
+}
+
+button {
+  border: 0;
+  border-radius: 5vmin;
+  appearance: none;
+  height: 3rem;
+  padding: 0 1rem;
+  background: hsl(140, 80%, 70%);
+  margin: 1rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(to bottom,
+    hsl(220, 12%, 12%) calc(50vh - 1px),
+    hsl(220, 12%, 32%) calc(50vh - 1px),
+    hsl(220, 12%, 32%) calc(50vh + 1px),
+    hsl(220, 12%, 12%) calc(50vh + 1px));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
